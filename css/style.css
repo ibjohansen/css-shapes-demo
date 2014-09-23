@@ -74,9 +74,9 @@ p {
     .fruit-div img {
         shape-outside: url(../images/fruit.png);
         -webkit-shape-outside: url(../images/fruit.png);
-        shape-image-threshold: 0.5;
-        -webkit-shape-image-threshold: 0.6;
-        float: left;
+        shape-image-threshold: 0.1;
+        -webkit-shape-image-threshold: 0.1;
+        float: right;
     }
 
 .fruit-div p {
