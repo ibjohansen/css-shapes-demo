@@ -8,6 +8,31 @@
 
 <link rel="stylesheet" href="css/style.css"/>
 
+<style type="text/css">
+
+    /* css-shape-demo styles */
+    .fruit-div {
+        width: 1000px;
+    }
+
+    .fruit-div img {
+        shape-outside: url(images/fruit.png);
+        shape-image-threshold: 0.2;
+        shape-margin: 5px;
+
+        /* -webkit prefixed */
+        -webkit-shape-outside: url(images/fruit.png);
+        -webkit-shape-image-threshold: 0.2;
+        -webkit-shape-margin: 5px;
+
+        float: right;
+    }
+
+    .fruit-div p {
+        padding-left: 5px;
+    }
+</style>
+
 <div class="fruit-div">
     <img src="images/fruit.png"/>
 

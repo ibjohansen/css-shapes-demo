@@ -65,20 +65,3 @@ body, html {
 p {
     padding-bottom: 25px;
 }
-
-/*demo-styles*/
-.fruit-div {
-    width: 1000px;
-}
-
-    .fruit-div img {
-        shape-outside: url(../images/fruit.png);
-        -webkit-shape-outside: url(../images/fruit.png);
-        shape-image-threshold: 0.1;
-        -webkit-shape-image-threshold: 0.1;
-        float: right;
-    }
-
-.fruit-div p {
-    padding-left: 5px;
-}
