@@ -2,40 +2,61 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>CSS Shapes demo</title>
+
+    <!--css med reset og globale styles-->
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <!--custom modernizr som sjekker på css shapes-->
+    <script src="modernizer/modernizr.custom.53734.js"></script>
+
+    <!--inline css slik at demo-aktuell css er lettere tilgjengelig for deg!-->
+    <style type="text/css">
+
+        /* css-shape-demo styles */
+        /*omsluttende div*/
+        .fruit-div {
+            width: 1000px;
+        }
+
+        /*img element som vi øsnker å legge en shape på*/
+        .fruit-div img {
+            shape-outside: url(images/fruit.png);
+            shape-image-threshold: 0.2;
+            shape-margin: 5px;
+
+            /* -webkit prefixed */
+            -webkit-shape-outside: url(images/fruit.png);
+            -webkit-shape-image-threshold: 0.2;
+            -webkit-shape-margin: 5px;
+
+            float: right;
+        }
+
+        /*tekst som skal flyte rundt frukten*/
+        .fruit-div p {
+            padding-left: 5px;
+        }
+
+    </style>
+
+
 </head>
 <body>
 
-<link rel="stylesheet" href="css/style.css"/>
+<!--div som vises dersom nettleseren ikke støtter css-shapes - kontrollert av modernizer-->
+<div class="no-support">
+    Din nettleser støtter ikke CSS Shapes, <a target="_blank" href="http://caniuse.com/#search=css shapes">se her hvilke
+    som gjør</a>
+</div>
 
-<style type="text/css">
-
-    /* css-shape-demo styles */
-    .fruit-div {
-        width: 1000px;
-    }
-
-    .fruit-div img {
-        shape-outside: url(images/fruit.png);
-        shape-image-threshold: 0.2;
-        shape-margin: 5px;
-
-        /* -webkit prefixed */
-        -webkit-shape-outside: url(images/fruit.png);
-        -webkit-shape-image-threshold: 0.2;
-        -webkit-shape-margin: 5px;
-
-        float: right;
-    }
-
-    .fruit-div p {
-        padding-left: 5px;
-    }
-</style>
-
+<!--omsluttende div-->
 <div class="fruit-div">
+
+    <!--img-element-->
     <img src="images/fruit.png"/>
 
+    <!--tekst-->
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis ligula nunc. Class aptent taciti sociosqu ad
         litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse condimentum a urna nec cursus. Duis
@@ -63,6 +84,21 @@
 
 
 </div>
+
+<!--
+    modernizr-kall
+    sjekk om css shapes er støttet
+    hvis ikke, skjul demo-innhold og animer inn no-support div'en ved å gradvis minke opacity
+    se linje 82 og ut i style.css
+-->
+<script>
+    if (!Modernizr.shapes) {
+        document.querySelector('.fruit-div').style.display = "none";
+        setTimeout(function () {
+            document.querySelector('.no-support').style.opacity = "1";
+        }, 500)
+    }
+</script>
 
 </body>
 </html>

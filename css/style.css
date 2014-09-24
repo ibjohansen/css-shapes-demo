@@ -53,6 +53,8 @@ table {
     border-spacing: 0;
 }
 
+/*Globale styles*/
+
 body, html {
     font-family: arial, sans-serif;
     height: 100%;
@@ -64,4 +66,26 @@ body, html {
 
 p {
     padding-bottom: 25px;
+}
+
+.no-support {
+    position: absolute;
+    top: 0;
+    height: 200px;
+    width: 100%;
+    background-color: rgba(249, 0, 197, 0.11);
+    border-bottom: 1px solid cornsilk;
+    opacity: 0;
+    padding: 40px 10px 10px 10px;
+    text-align: center;
+
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out
+
+}
+
+.visible {
+    opacity: 1;
 }
